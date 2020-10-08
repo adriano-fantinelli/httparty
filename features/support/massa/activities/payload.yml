@@ -1,0 +1,16 @@
+﻿create_activity: 
+  {
+    "ID": 4,
+    "Title": "Running on the street",
+    "DueDate": "2020-10-08T14:24:35.639Z",
+    "Completed": true
+  }
+
+edit_activity: 
+  {
+    "ID": 4,
+    "Title": "Running on the mountain",
+    "DueDate": "2020-10-08T14:24:35.639Z",
+    "Completed": true
+  }
+  

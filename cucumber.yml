@@ -1,0 +1,5 @@
+#Ambiente
+  prd: AMBIENTE=prd
+
+#Reports
+  reports: --format pretty --format AllureCucumber::CucumberFormatter --out allure-results
