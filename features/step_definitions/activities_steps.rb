@@ -5,8 +5,13 @@ When('I send a GET request to find all activities') do
 end
 
 Then('the response must be all activities') do
-  raise 'Api is not working' if @response.code != 200
-  raise 'Response is not OK'  if @response.nil?
+  log('Api is not working') if @response.code != 200
+  @response.parsed_response.each do |activity|
+    expect(activity["ID"]).to be_a_kind_of(Integer)
+    expect(activity["Title"]).to be_a_kind_of(String)
+    expect(activity["DueDate"]).to be_a_kind_of(String)
+    expect([true, false]).to include(activity["Completed"])
+  end 
 end
 
 When('I send a POST request to create an activity') do
@@ -18,8 +23,13 @@ When('I send a POST request to create an activity') do
 end
 
 Then('the response must be the new activity') do
-  raise 'Api is not working' if @response.code != 200
-  raise 'Response is not OK'  if @response.nil?
+  log('Api is not working') if @response.code != 200
+  @response.parsed_response do
+    expect(["ID"]).to be_a_kind_of(Integer)
+    expect(["Title"]).to be_a_kind_of(String)
+    expect(["DueDate"]).to be_a_kind_of(String)
+    expect([true, false]).to include(activity["Completed"])
+  end 
 end
 
 When('I send a DELETE request to delete the activity {string}') do |id|
@@ -29,7 +39,7 @@ When('I send a DELETE request to delete the activity {string}') do |id|
 end
 
 Then('the response must be success') do
-  raise 'Api is not working' if @response.code != 200
+  log('Api is not working') if @response.code != 200
 end
 
 When('I send a GET request to find the activity {string}') do |id|
@@ -41,6 +51,12 @@ end
 Then('the response must be the activity {int}') do |id|
   log('Api is not working') if @response.code != 200
   log('Response is not OK')  if @response['ID'] != id
+  @response.parsed_response do
+    expect(["ID"]).to be_a_kind_of(Integer)
+    expect(["Title"]).to be_a_kind_of(String)
+    expect(["DueDate"]).to be_a_kind_of(String)
+    expect([true, false]).to include(activity["Completed"])
+  end 
 end
 
 When('I send a PUT request to edit the activity {string}') do |id|
@@ -53,5 +69,10 @@ end
 
 Then('the response must be the edited activity') do
   log('Api is not working') if @response.code != 200
-  raise 'Response is not OK'  if @response.nil?
+  @response.parsed_response do
+    expect(["ID"]).to be_a_kind_of(Integer)
+    expect(["Title"]).to be_a_kind_of(String)
+    expect(["DueDate"]).to be_a_kind_of(String)
+    expect([true, false]).to include(activity["Completed"])
+  end 
 end

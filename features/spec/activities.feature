@@ -18,10 +18,10 @@ Feature: Activities
 
   @search_activity
   Scenario: Search for an activity
-    When I send a GET request to find the activity '3'
-    Then the response must be the activity 3
+    When I send a GET request to find the activity '4'
+    Then the response must be the activity 4
 
   @edit_activity
   Scenario: Edit an activity
-    When I send a PUT request to edit the activity '3'
+    When I send a PUT request to edit the activity '4'
     Then the response must be the edited activity  
