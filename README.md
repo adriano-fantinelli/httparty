@@ -9,8 +9,8 @@ Test automation project using HTTParty for Back-end tests. We are going to use t
 - RSpec
 
 ## :man_technologist:	Setting up the environment :woman_technologist:	
-- It is necessary to install Ruby 
-[Ruby](https://rubyinstaller.org/) 
+
+- It is necessary to install [Ruby](https://rubyinstaller.org/) 
 
 - Then, let's open the terminal and write the following command to install the bundler:
 ```
