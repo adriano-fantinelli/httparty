@@ -1,4 +1,4 @@
-# 🥳 httparty-ruby-automation 🥳
+# 🥳 HTTParty 🥳
 Test automation project using HTTParty for Back-end tests. We are going to use the API http://fakerestapi.azurewebsites.net/swagger/ui/index#/ to our tests.
 
 ## :point_right: Technologies :point_left:	
