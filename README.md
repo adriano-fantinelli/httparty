@@ -17,7 +17,7 @@ Test automation project using HTTParty for Back-end tests. We are going to use t
 gem install bundler --force
 ```
 
-- To intall the dependencies, use:
+- To install the dependencies, use:
 ```
 bundle install
 ```
