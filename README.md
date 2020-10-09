@@ -22,7 +22,7 @@ gem install bundler --force
 bundle install
 ```
 
-## Running the tests
+## :running_man: Running the tests :running_woman:
 ```
 cucumber -p prd -t @REST
 ```
